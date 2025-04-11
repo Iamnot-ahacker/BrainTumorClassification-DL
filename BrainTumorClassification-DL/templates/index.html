@@ -2,7 +2,7 @@
 {% block content %}
 
 <center>
-<br><h2>Brain Tumor Classification Using Deep Learning</h2><br>
+<br><h2>Brain Tumor Classification Using Deep Learning API Model</h2><br>
 
     <form id="upload-file" method="post" enctype="multipart/form-data">
          <input type="file" name="file" class="btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg">
@@ -26,13 +26,12 @@
 
 {% endblock %}
 
-<!-- JavaScript kodunu burada ekleyin -->
 <script>
     document.getElementById('imageUpload').addEventListener('change', function(e) {
         var reader = new FileReader();
         reader.onload = function(event) {
             document.getElementById('imagePreview').src = event.target.result;
-            document.querySelector('.image-section').style.display = 'block'; // Görüntüleme alanını göster
+            document.querySelector('.image-section').style.display = 'block'; 
         }
         reader.readAsDataURL(e.target.files[0]);
     });
